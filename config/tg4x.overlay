@@ -3,10 +3,10 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        zmk,physical-layout = &layout_56_ansi;
     };
 
-    default_transform: matrix_transform {
+    default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
         rows = <4>;
@@ -20,6 +20,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) 
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+
         diode-direction = "col2row";
         row-gpios
             = <&gpio0 12 GPIO_ACTIVE_HIGH>
@@ -44,4 +46,9 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) 
             , <&gpio0 22 GPIO_ACTIVE_HIGH>
             ;
     };
+
+};
+
+&layout_56_ansi {
+    transform = <&default_transform>;
 };
