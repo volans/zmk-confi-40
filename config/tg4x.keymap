@@ -9,15 +9,6 @@
 #define ADJUST  3
 
 / {
-    macros {
-        // macOS 锁屏: Ctrl + Cmd + Q
-        mac_lock: mac_lock {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp LGUI &kp Q>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
